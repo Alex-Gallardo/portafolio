@@ -1,0 +1,40 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+// FONTS
+@font-face {
+  src: url("../fonts/NimbusSanL-Bol.otf");
+  font-family: "Nimbus Bold";
+  font-weight: 700;
+}
+
+@font-face {
+  src: url("../fonts/NimbusSanL-BolIta.otf");
+  font-family: "Nimbus Bold Italic";
+  font-weight: 700;
+}
+
+@font-face {
+  src: url("../fonts/NimbusSanL-Reg.otf");
+  font-family: "Nimbus";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("../fonts/NimbusSanL-RegIta.otf");
+  font-family: "Nimbus Italic";
+  font-weight: 500;
+}

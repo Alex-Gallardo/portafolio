@@ -1,0 +1,66 @@
+@mixin flexPosition($dir, $pos, $alg) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $pos;
+  align-items: $alg;
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+.container {
+  @include flexPosition(row, center, center);
+  width: 100%;
+  height: 100%;
+
+  .part {
+    @include flexPosition(column, center, center);
+    width: 50%;
+    height: 100%;
+
+    .title {
+      @include flexPosition(column, center, flex-start);
+      width: auto;
+      margin-bottom: 25px;
+
+      h1 {
+        font-weight: 500;
+        font-size: 8em;
+        margin: 0px;
+      }
+    }
+
+    .features {
+      @include flexPosition(column, center, flex-start);
+      width: auto;
+      border-left: 3px solid #000;
+      padding-left: 20px;
+
+      p {
+        margin: 0;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
