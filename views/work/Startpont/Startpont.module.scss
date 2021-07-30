@@ -23,9 +23,18 @@
   }
 }
 
+// .container {
+//   @include flexPosition(column, flex-start, center);
+//   width: 100%;
+//   max-width: 100%;
+//   height: auto;
+// }
+
 .container {
   @include flexPosition(column, center, center);
   width: 100%;
-  height: 100%;
-
+  max-width: 100%;
+  height: 100vh;
+  background: cornflowerblue;
+  color: #fff;
 }

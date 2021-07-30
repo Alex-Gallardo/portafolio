@@ -6,6 +6,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html::-webkit-scrollbar {
+  display: none;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -14,6 +17,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
 // FONTS
 @font-face {
   src: url("../fonts/NimbusSanL-Bol.otf");
@@ -37,4 +41,28 @@ a {
   src: url("../fonts/NimbusSanL-RegIta.otf");
   font-family: "Nimbus Italic";
   font-weight: 500;
+}
+
+@font-face {
+  src: url("../fonts/static/Lora-Bold.ttf");
+  font-family: "Lora";
+  font-weight: 700;
+}
+
+@font-face {
+  src: url("../fonts/static/Lora-SemiBold.ttf");
+  font-family: "Lora";
+  font-weight: 600;
+}
+
+@font-face {
+  src: url("../fonts/static/Lora-Medium.ttf");
+  font-family: "Lora";
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("../fonts/static/Lora-Regular.ttf");
+  font-family: "Lora";
+  font-weight: 400;
 }

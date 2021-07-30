@@ -5,6 +5,12 @@
   align-items: $alg;
 }
 
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media only screen and (max-width: 768px) {
     @content;
@@ -12,7 +18,7 @@
 }
 
 @mixin desktop {
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 1024px) {
     @content;
   }
 }
@@ -29,6 +35,7 @@
   height: 120px;
   padding: 0px 100px;
   position: relative;
+  z-index: 1;
 
   li {
     list-style: none;
@@ -44,15 +51,68 @@
     @include flexPosition(row, space-between, center);
     width: 40%;
   }
+
+  .menu {
+    display: none;
+  }
+
+  .nada {
+    display: none;
+  }
+
+  // Menu abierto
+  .menu_config {
+    @include flexPosition(column, center, center);
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    left: 0;
+    background-color: grey;
+
+    animation-duration: 0.7s;
+    animation-name: openMenu;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+
+  // Tablet
+  @include tablet {
+    @include flexPosition(row, space-between, center);
+    padding: 0px 50px;
+
+    .menu {
+      @include flexPosition(row, space-between, center);
+    }
+
+    .container_nav_options {
+      display: none;
+    }
+  }
+
+  // Mobile
+  @include mobile {
+    @include flexPosition(row, space-between, center);
+    padding: 0px 25px;
+
+    .menu {
+      @include flexPosition(row, space-between, center);
+    }
+
+    .container_nav_options {
+      display: none;
+    }
+  }
 }
 
 .container_nav::before {
   content: "";
   position: absolute;
   width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
   z-index: 2;
-  left: 0;
-  top: 0;
+  left: 0px;
+  top: 0px;
 
   animation-duration: 1s;
   animation-name: in;
@@ -61,12 +121,13 @@
   // animation-delay: 1s;
 }
 
+// ANIMACIONES
 @keyframes in {
   0% {
     position: absolute;
     top: 0px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: #000;
     z-index: 2;
   }
@@ -84,9 +145,11 @@
   @include flexPosition(row, space-between, center);
   width: 100%;
   height: 120px;
+  position: relative;
 
   &::before {
     content: "";
+    z-index: 4;
     // width: 100%;
     // height: 100%;
     animation-duration: 1s;
@@ -95,10 +158,6 @@
     animation-timing-function: ease-in-out;
     // animation-delay: 1s;
   }
-
-  // & > * {
-  //   display: none;
-  // }
 }
 
 @keyframes out {
@@ -117,5 +176,101 @@
     width: 100vw;
     background-color: #000;
     z-index: 2;
+  }
+}
+
+// ANIMACION DE SALIDA
+.container_nav_ani {
+  @include flexPosition(row, space-between, center);
+  width: 100%;
+  height: 120px;
+  padding: 0px 100px;
+  position: relative;
+
+  // Tablet
+  @include tablet {
+    @include flexPosition(row, space-between, center);
+    padding: 0px 50px;
+
+    .menu {
+      @include flexPosition(row, space-between, center);
+    }
+  }
+
+  // Mobile
+  @include mobile {
+    @include flexPosition(row, space-between, center);
+    padding: 0px 25px;
+
+    .menu {
+      @include flexPosition(row, space-between, center);
+    }
+  }
+
+  li {
+    list-style: none;
+
+    p {
+      font-weight: 700;
+      font-family: "Nimbus Bold";
+      cursor: pointer;
+    }
+  }
+
+  .container_nav_options {
+    @include flexPosition(row, space-between, center);
+    width: 40%;
+
+    // Tablet
+    @include tablet{
+      display: none;
+    }
+
+    // Mobile
+    @include mobile{
+      display: none;
+    }
+  }
+
+  animation-duration: 1s;
+  animation-name: topBottom;
+  // animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes topBottom {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -100px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+// ANIMACION ABRIR MENU
+@keyframes openMenu {
+  0% {
+    width: 0px;
+    height: 0px;
+    background-color: grey;
+    border-radius: 100%;
+    margin: 0 auto;
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0px;
+    margin: 0 auto;
+    // right: 0;
+    top: 0;
+    // left: 0;
+    color: #fff;
   }
 }

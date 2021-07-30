@@ -17,7 +17,7 @@ const HomeWiew: React.FC = () => {
           <p>UI/UX</p>
         </div>
       </section>
-      <section className={Styles.part}>
+      <section className={`${Styles.part2} ${Styles.part2_animate}`}>
         <p>Hola mundo</p>
       </section>
     </main>
