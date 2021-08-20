@@ -21,11 +21,8 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps) => {
 
   // useEffect
   useEffect(() => {
-    if (props.animate) {
-      setAnimeClass(Styles.container_nav_ani);
-    } else {
-      setAnimeClass("");
-    }
+    if (props.animate) setAnimeClass(Styles.container_nav_ani);
+    else setAnimeClass("");
   }, [props.animate]);
 
   // Cambio de ruta
