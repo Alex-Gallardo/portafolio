@@ -60,14 +60,15 @@
     display: none;
   }
 
-  // Menu abierto
+  // Menu abierto (Mobil)
   .menu_config {
     @include flexPosition(column, center, center);
     position: absolute;
     z-index: 3;
     right: 0;
     left: 0;
-    background-color: grey;
+    // Cuando el menu esta abierto
+    background-color: #252326c5;
 
     animation-duration: 0.7s;
     animation-name: openMenu;
@@ -128,7 +129,7 @@
     top: 0px;
     height: 100vh;
     width: 100%;
-    background-color: #000;
+    background-color: #252326;
     z-index: 2;
   }
   100% {
@@ -136,7 +137,7 @@
     top: 0px;
     height: 0vh;
     width: 100vw;
-    background-color: #000;
+    background-color: #252326;
     z-index: 2;
   }
 }
@@ -250,12 +251,13 @@
   }
 }
 
-// ANIMACION ABRIR MENU
+// ANIMACION ABRIR MENU (MOBIL)
 @keyframes openMenu {
   0% {
     width: 0px;
     height: 0px;
-    background-color: grey;
+    // Color que aparece justo antes de que se abra el menu
+    background-color: gray;
     border-radius: 100%;
     margin: 0 auto;
     opacity: 0;

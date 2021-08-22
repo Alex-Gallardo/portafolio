@@ -46,7 +46,13 @@
     font-size: 4em;
     font-weight: 500;
     margin-bottom: 20px;
+
+    // Mobil
+    @include mobile{
+        font-size: 3em;
+    }
   }
+
 
   .cont_info {
     @include flexPosition(row, space-between, flex-start);
@@ -75,6 +81,11 @@
           font-family: "Lora";
           font-size: 3em;
           font-weight: 500;
+        } 
+        
+        // Mobil
+        @include mobile{
+            font-size: 0.8em;
         }
     
         .article {

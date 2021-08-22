@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = (props: NavbarProps) => {
       </li>
       <div className={menu ? Styles.menu_config : Styles.nada}>
         <li onClick={closeMenu}>
-          <p>Close X</p>
+          <p>CLOSE X</p>
         </li>
         <li>
           <p onClick={outAnimation("/about")}>ABOUT</p>
